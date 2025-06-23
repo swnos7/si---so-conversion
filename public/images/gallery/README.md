@@ -1,0 +1,1 @@
+Place your gallery images here. Name them gallery-1.jpg, gallery-2.jpg, and so on, up to gallery-8.jpg.

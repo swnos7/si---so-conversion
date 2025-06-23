@@ -1,0 +1,1 @@
+Place your team member photos here. For this template, you'll need 'jsilva.jpg' and 'hsouza.jpg'.
