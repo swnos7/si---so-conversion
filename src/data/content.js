@@ -73,7 +73,7 @@ export const services = [
 ];
 
 export const galleryItems = [
-  { src: 'dist/images/portfolio/washroom%20done%20-%20Edited.jpg', title: "Bathroom", alt: "A beautifully converted loft space with modern furnishings" },
+  { src: 'images/portfolio/washroom%20done%20-%20Edited.jpg', title: "Bathroom", alt: "A beautifully converted loft space with modern furnishings" },
     { src: 'images/portfolio/woodsbackyard.jpg', title: "Landscape", alt: "Exterior view of a modern house conversion" },
     { src: 'images/portfolio/floorrepair.jpg', title: "Modern Flooring", alt: "Sleek and modern wooden flooring in a living room" },
     { src: 'images/portfolio/washroombuild.jpg', title: "Exterior Work", alt: "Side view of a house with new exterior cladding and windows" },

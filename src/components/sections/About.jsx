@@ -15,7 +15,7 @@ const About = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
           >
-            <img src="public/images/logo/logo Si&So.svg" alt="Construction team working on a project" className="rounded-lg shadow-2xl w-full h-auto object-cover" />
+            <img src="images/logo/logo%20Si&So.svg" alt="Construction team working on a project" className="rounded-lg shadow-2xl w-full h-auto object-cover" />
           </motion.div>
           <motion.div
             initial={{ opacity: 0, x: 50 }}
