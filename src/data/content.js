@@ -1,6 +1,6 @@
 export const company = {
   name: "SI & SO CONVERSIONS",
-  logoLight: 'public/images/logo/LOGO.svg',
+  logoLight: 'images/logo/LOGO.svg',
   phone1: "07763 739281",
   phone2: "07399 282178",
   email: "s.s.conversions@gmail.com",
@@ -23,17 +23,17 @@ export const navLinks = [
 
 export const features = [
   {
-    icon: 'public/icons/Features/loft conversion black.svg',
+    icon: 'icons/Features/loft conversion black.svg',
     title: "Loft Conversions",
     description: "Transform unused attic space into beautiful, functional living areas."
   },
   {
-    icon: 'public/icons/Features/home extension 2 black.svg',
+    icon: 'icons/Features/home extension 2 black.svg',
     title: "Home Extensions",
     description: "Add space and value to your property with seamless, tailored extensions."
   },
   {
-    icon: 'public/icons/Features/refurbishment black.svg',
+    icon: 'icons/Features/refurbishment black.svg',
     title: "Refurbishment",
     description: "Modernise and refresh your home with expert renovation work."
   }
@@ -41,47 +41,47 @@ export const features = [
 
 export const services = [
   {
-    icon: 'public/icons/services/electricity black.svg',
+    icon: '/icons/services/electricity black.svg',
     title: "Electrical Work",
     description: "Safe, certified electrical installations and repairs, including lighting, rewiring, and fuse board upgrades all to UK standards."
   },
   {
-    icon: 'public/icons/services/heating 2 black.svg',
+    icon: '/icons/services/heating 2 black.svg',
     title: "Heating Systems",
     description: "Efficient installation and servicing of central heating systems, boilers, and radiators to keep your home warm and comfortable year-round."
   },
   {
-    icon: 'public/icons/services/plumbing black.svg',
+    icon: '/icons/services/plumbing black.svg',
     title: "Plumbing Services",
     description: "Reliable plumbing solutions for kitchens, bathrooms, and general maintenance—delivered with care and precision."
   },
   {
-    icon: 'public/icons/services/painting black.svg',
+    icon: '/icons/services/painting black.svg',
     title: "Interior & Exterior Painting",
     description: "High-quality painting and finishing that elevates your space, using durable, weather-appropriate materials for lasting results."
   },
   {
-    icon: 'public/icons/services/carpentry black.svg',
+    icon: '/icons/services/carpentry black.svg',
     title: "Carpentry & Joinery",
     description: "Custom woodwork, from fitted furniture to structural joinery, crafted with expertise and attention to detail."
   },
   {
-    icon: 'public/icons/services/roofing 2 black.svg',
+    icon: '/icons/services/roofing 2 black.svg',
     title: "Roof Repairs & Installation",
     description: "Professional roofing services including new installations, leak repairs, and maintenance—built to withstand the UK weather."
   }
 ];
 
 export const galleryItems = [
-  { src: 'public/images/portfolio/washroom done - Edited.jpg', title: "Bathroom", alt: "A beautifully converted loft space with modern furnishings" },
-    { src: 'public/images/portfolio/woodsbackyard.jpg', title: "Landscape", alt: "Exterior view of a modern house conversion" },
-    { src: 'public/images/portfolio/floorrepair.jpg', title: "Modern Flooring", alt: "Sleek and modern wooden flooring in a living room" },
-    { src: 'public/images/portfolio/washroombuild.jpg', title: "Exterior Work", alt: "Side view of a house with new exterior cladding and windows" },
-    { src: 'public/images/portfolio/indiansstairs.jpg', title: "Modern Interior", alt: "Bright and airy modern interior with minimalist furniture" },
-    { src: 'public/images/portfolio/bathroom 12 - Edited.jpg', title: "Bathroom Design", alt: "Stylish bathroom with a walk-in shower and modern tiles" },
-    { src: 'public/images/portfolio/bathroom done - Edited.jpg', title: "Luxury Bathroom", alt: "A luxury bathroom with a freestanding tub and marble walls" },
-    { src: 'public/images/portfolio/floorrwfur.jpg', title: "Flooring", alt: "Spacious kitchen extension with a large island and skylights" },
-    { src: 'public/images/portfolio/guardingcamp.jpg', title: "Storage", alt: "A landscaped garden with a new patio and outdoor seating area" }
+  { src: 'dist/images/portfolio/washroom%20done%20-%20Edited.jpg', title: "Bathroom", alt: "A beautifully converted loft space with modern furnishings" },
+    { src: 'images/portfolio/woodsbackyard.jpg', title: "Landscape", alt: "Exterior view of a modern house conversion" },
+    { src: 'images/portfolio/floorrepair.jpg', title: "Modern Flooring", alt: "Sleek and modern wooden flooring in a living room" },
+    { src: 'images/portfolio/washroombuild.jpg', title: "Exterior Work", alt: "Side view of a house with new exterior cladding and windows" },
+    { src: 'images/portfolio/indiansstairs.jpg', title: "Modern Interior", alt: "Bright and airy modern interior with minimalist furniture" },
+    { src: 'images/portfolio/bathroom%2012%20-%20Edited.jpg', title: "Bathroom Design", alt: "Stylish bathroom with a walk-in shower and modern tiles" },
+    { src: 'images/portfolio/bathroom%20done%20-%20Edited.jpg', title: "Luxury Bathroom", alt: "A luxury bathroom with a freestanding tub and marble walls" },
+    { src: 'images/portfolio/floorrwfur.jpg', title: "Flooring", alt: "Spacious kitchen extension with a large island and skylights" },
+    { src: 'images/portfolio/guardingcamp.jpg', title: "Storage", alt: "A landscaped garden with a new patio and outdoor seating area" }
 ];
 
 export const testimonials = [
@@ -105,14 +105,14 @@ export const directors = [
     title: "Operations Director",
     email: "s.s.conversions@gmail.com",
     phone: "+44 07399 282178",
-    image: 'public/images/logo/LOGO.svg'
+    image: 'images/logo/LOGO.svg'
   },
   {
     name: "H. Sousa",
     title: "Operations Director",
     email: "s.s.conversions@gmail.com",
     phone: "+44 07763 739281",
-    image: 'public/images/logo/Si&So.svg'
+    image: 'images/logo/Si&So.svg'
   }
 ];
 
