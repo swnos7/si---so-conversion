@@ -1,3 +1,4 @@
+
 import React, { useState } from 'react';
 import { Helmet } from 'react-helmet';
 import { motion, AnimatePresence } from 'framer-motion';
@@ -14,7 +15,7 @@ import Testimonials from '@/components/sections/Testimonials';
 import Team from '@/components/sections/Team';
 import Contact from '@/components/sections/Contact';
 import GalleryModal from '@/components/ui/GalleryModal';
-import { galleryItems } from '@/data/content';
+import { galleryItems, galleryItemsByCategory } from '@/data/content';
 
 const SectionWrapper = ({ children, className }) => (
   <motion.div
@@ -30,6 +31,8 @@ const SectionWrapper = ({ children, className }) => (
 
 function App() {
   const [selectedImageIndex, setSelectedImageIndex] = useState(null);
+  const [currentGalleryItems, setCurrentGalleryItems] = useState(galleryItems);
+  const [activeCategory, setActiveCategory] = useState('all');
 
   const scrollToSection = (sectionId) => {
     const element = document.getElementById(sectionId);
@@ -38,14 +41,35 @@ function App() {
     }
   };
 
+  const handleImageClick = (index) => {
+    setSelectedImageIndex(index);
+  };
+
+  const handleCategoryChange = (categoryId) => {
+    setActiveCategory(categoryId);
+    
+    // Update current gallery items based on category
+    let newItems;
+    if (categoryId === 'all') {
+      const allItems = [];
+      Object.values(galleryItemsByCategory).forEach(categoryItems => {
+        allItems.push(...categoryItems);
+      });
+      newItems = allItems.length > 0 ? allItems : galleryItems;
+    } else {
+      newItems = galleryItemsByCategory[categoryId] || [];
+    }
+    
+    setCurrentGalleryItems(newItems);
+  };
+
   const handleNext = () => {
-    setSelectedImageIndex((prevIndex) => (prevIndex + 1) % galleryItems.length);
+    setSelectedImageIndex((prevIndex) => (prevIndex + 1) % currentGalleryItems.length);
   };
 
   const handlePrev = () => {
-    setSelectedImageIndex((prevIndex) => (prevIndex - 1 + galleryItems.length) % galleryItems.length);
+    setSelectedImageIndex((prevIndex) => (prevIndex - 1 + currentGalleryItems.length) % currentGalleryItems.length);
   };
-
 
   return (
     <>
@@ -63,7 +87,12 @@ function App() {
           <SectionWrapper><Features /></SectionWrapper>
           <SectionWrapper><About /></SectionWrapper>
           <SectionWrapper><Services /></SectionWrapper>
-          <SectionWrapper><Gallery onImageClick={(index) => setSelectedImageIndex(index)} /></SectionWrapper>
+          <SectionWrapper>
+            <Gallery 
+              onImageClick={handleImageClick} 
+              onCategoryChange={handleCategoryChange}
+            />
+          </SectionWrapper>
           <SectionWrapper><Testimonials /></SectionWrapper>
           <SectionWrapper><Team /></SectionWrapper>
           <SectionWrapper><Contact /></SectionWrapper>
@@ -74,7 +103,7 @@ function App() {
         <AnimatePresence>
           {selectedImageIndex !== null && (
             <GalleryModal
-              galleryItems={galleryItems}
+              galleryItems={currentGalleryItems}
               currentIndex={selectedImageIndex}
               onClose={() => setSelectedImageIndex(null)}
               onNext={handleNext}

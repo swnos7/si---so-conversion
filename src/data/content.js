@@ -1,5 +1,3 @@
-import L from "leaflet";
-
 export const company = {
   name: "SI & SO CONVERSIONS",
   logoLight: 'images/logo/LOGO.svg',
@@ -74,17 +72,210 @@ export const services = [
   }
 ];
 
-export const galleryItems = [
-    { src: 'images/portfolio/washroom%20done%20-%20Edited.jpg', title: "Bathroom", alt: "A beautifully converted loft space with modern furnishings" },
-    { src: 'images/portfolio/woodsbackyard.jpg', title: "Landscape", alt: "Exterior view of a modern house conversion" },
-    { src: 'images/portfolio/floorrepair.jpg', title: "Modern Flooring", alt: "Sleek and modern wooden flooring in a living room" },
-    { src: 'images/portfolio/washroombuild.jpg', title: "Exterior Work", alt: "Side view of a house with new exterior cladding and windows" },
-    { src: 'images/portfolio/indiansstairs.jpg', title: "Modern Interior", alt: "Bright and airy modern interior with minimalist furniture" },
-    { src: 'images/portfolio/bathroom%2012%20-%20Edited.jpg', title: "Bathroom Design", alt: "Stylish bathroom with a walk-in shower and modern tiles" },
-    { src: 'images/portfolio/bathroom%20done%20-%20Edited.jpg', title: "Luxury Bathroom", alt: "A luxury bathroom with a freestanding tub and marble walls" },
-    { src: 'images/portfolio/floorrwfur.jpg', title: "Flooring", alt: "Spacious kitchen extension with a large island and skylights" },
-    { src: 'images/portfolio/guardingcamp.jpg', title: "Storage", alt: "A landscaped garden with a new patio and outdoor seating area" }
+
+// Gallery categories for filtering - Updated with your specific services
+export const galleryCategories = [
+  { id: 'all', label: 'All Projects' },
+  { id: 'conversions', label: 'Conversions' },
+  { id: 'extensions', label: 'Extensions' },
+  { id: 'exterior-projects', label: 'Exterior Projects' },
+  { id: 'bespoke-projects', label: 'Bespoke Projects' },
+  { id: 'bathroom-projects', label: 'Bathroom Projects' },
+  { id: 'flooring-designs', label: 'Flooring Designs' }
 ];
+
+// Gallery items organized by service category
+export const galleryItemsByCategory = {
+  'conversions': [
+    { src: '/images/gallery/conversions/con1.jpeg', title: "Si&SoConversion", alt: "conversion" },
+    { src: '/images/gallery/conversions/con2.jpeg', title: "Si&SoConversion", alt: "conversion" },
+    { src: '/images/gallery/conversions/con3.jpeg', title: "Si&SoConversion", alt: "conversion" },
+    { src: '/images/gallery/conversions/con4.jpeg', title: "Si&SoConversion", alt: "conversion" },
+    { src: '/images/gallery/conversions/con5.jpeg', title: "Si&SoConversion", alt: "conversion" },
+    { src: '/images/gallery/conversions/con6.jpeg', title: "Si&SoConversion", alt: "conversion" },
+    { src: '/images/gallery/conversions/con7.jpeg', title: "Si&SoConversion", alt: "conversion" },
+    { src: '/images/gallery/conversions/con8.jpeg', title: "Si&SoConversion", alt: "conversion" },
+    { src: '/images/gallery/conversions/con9.jpeg', title: "Si&SoConversion", alt: "conversion" },
+    { src: '/images/gallery/conversions/con10.jpeg', title: "Si&SoConversion", alt: "conversion" },
+    { src: '/images/gallery/conversions/con11.jpeg', title: "Si&SoConversion", alt: "conversion" },
+    { src: '/images/gallery/conversions/con12.jpeg', title: "Si&SoConversion", alt: "conversion" },
+    { src: '/images/gallery/conversions/con13.jpeg', title: "Si&SoConversion", alt: "conversion" },
+    { src: '/images/gallery/conversions/con14.jpeg', title: "Si&SoConversion", alt: "conversion" },
+    { src: '/images/gallery/conversions/con15.jpeg', title: "Si&SoConversion", alt: "conversion" },
+    { src: '/images/gallery/conversions/con16.jpeg', title: "Si&SoConversion", alt: "conversion" },
+    { src: '/images/gallery/conversions/con17.jpeg', title: "Si&SoConversion", alt: "conversion" },
+    { src: '/images/gallery/conversions/con18.jpeg', title: "Si&SoConversion", alt: "conversion" },
+    { src: '/images/gallery/conversions/con19.jpeg', title: "Si&SoConversion", alt: "conversion" },
+    { src: '/images/gallery/conversions/con20.jpeg', title: "Si&SoConversion", alt: "conversion" },
+    { src: '/images/gallery/conversions/con21.jpeg', title: "Si&SoConversion", alt: "conversion" },
+    { src: '/images/gallery/conversions/con22.jpeg', title: "Si&SoConversion", alt: "conversion" },
+    { src: '/images/gallery/conversions/con23.jpeg', title: "Si&SoConversion", alt: "conversion" },
+    { src: '/images/gallery/conversions/con24.jpeg', title: "Si&SoConversion", alt: "conversion" },
+    { src: '/images/gallery/conversions/con25.jpeg', title: "Si&SoConversion", alt: "conversion" },
+    { src: '/images/gallery/conversions/con26.jpeg', title: "Si&SoConversion", alt: "conversion" },
+    { src: '/images/gallery/conversions/con27.jpeg', title: "Si&SoConversion", alt: "conversion" },
+    { src: '/images/gallery/conversions/con28.jpeg', title: "Si&SoConversion", alt: "conversion" },
+    { src: '/images/gallery/conversions/con29.jpeg', title: "Si&SoConversion", alt: "conversion" },
+    { src: '/images/gallery/conversions/con30.jpeg', title: "Si&SoConversion", alt: "conversion" },
+    { src: '/images/gallery/conversions/con31.jpeg', title: "Si&SoConversion", alt: "conversion" },
+    { src: '/images/gallery/conversions/con32.jpeg', title: "Si&SoConversion", alt: "conversion" },
+    { src: '/images/gallery/conversions/con33.jpeg', title: "Si&SoConversion", alt: "conversion" },
+    { src: '/images/gallery/conversions/con34.jpeg', title: "Si&SoConversion", alt: "conversion" },
+    { src: '/images/gallery/conversions/con35.jpeg', title: "Si&SoConversion", alt: "conversion" },
+    { src: '/images/gallery/conversions/con36.jpeg', title: "Si&SoConversion", alt: "conversion" },
+    { src: '/images/gallery/conversions/con37.jpeg', title: "Si&SoConversion", alt: "conversion" }
+  ],
+  'extensions': [
+    { src: '/images/gallery/extensions/ext1.jpeg', title: "Si&SoConversion", alt: "extensions" },
+    { src: '/images/gallery/extensions/ext2.jpeg', title: "Si&SoConversion", alt: "extensions" },
+    { src: '/images/gallery/extensions/ext3.jpeg', title: "Si&SoConversion", alt: "extensions" },
+    { src: '/images/gallery/extensions/ext4.jpeg', title: "Si&SoConversion", alt: "extensions" },
+    { src: '/images/gallery/extensions/ext5.jpeg', title: "Si&SoConversion", alt: "extensions" },
+    { src: '/images/gallery/extensions/ext6.jpeg', title: "Si&SoConversion", alt: "extensions" },
+    { src: '/images/gallery/extensions/ext7.jpeg', title: "Si&SoConversion", alt: "extensions" },
+    { src: '/images/gallery/extensions/ext8.jpeg', title: "Si&SoConversion", alt: "extensions" },
+    { src: '/images/gallery/extensions/ext9.jpeg', title: "Si&SoConversion", alt: "extensions" },
+    { src: '/images/gallery/extensions/ext10.jpeg', title: "Si&SoConversion", alt: "extensions" },
+    { src: '/images/gallery/extensions/ext11.jpeg', title: "Si&SoConversion", alt: "extensions" },
+    { src: '/images/gallery/extensions/ext12.jpeg', title: "Si&SoConversion", alt: "extensions" },
+    { src: '/images/gallery/extensions/ext13.jpeg', title: "Si&SoConversion", alt: "extensions" },
+    { src: '/images/gallery/extensions/ext14.jpeg', title: "Si&SoConversion", alt: "extensions" }
+  ],
+  'exterior-projects': [
+    { src: '/images/gallery/exterior/exterior1.jpeg', title: "Si&SoConversions", alt: "exteriorProject" },
+    { src: '/images/gallery/exterior/exterior2.jpeg', title: "Si&SoConversions", alt: "exteriorProject" },
+    { src: '/images/gallery/exterior/exterior3.jpeg', title: "Si&SoConversions", alt: "exteriorProject" },
+    { src: '/images/gallery/exterior/exterior4.jpeg', title: "Si&SoConversions", alt: "exteriorProject" },
+    { src: '/images/gallery/exterior/exterior5.jpeg', title: "Si&SoConversions", alt: "exteriorProject" },
+    { src: '/images/gallery/exterior/exterior6.jpeg', title: "Si&SoConversions", alt: "exteriorProject" },
+    { src: '/images/gallery/exterior/exterior7.jpeg', title: "Si&SoConversions", alt: "exteriorProject" },
+    { src: '/images/gallery/exterior/exterior8.jpeg', title: "Si&SoConversions", alt: "exteriorProject" },
+    { src: '/images/gallery/exterior/exterior9.jpeg', title: "Si&SoConversions", alt: "exteriorProject" },
+    { src: '/images/gallery/exterior/exterior10.jpeg', title: "Si&SoConversions", alt: "exteriorProject" },
+    { src: '/images/gallery/exterior/exterior11.jpeg', title: "Si&SoConversions", alt: "exteriorProject" },
+    { src: '/images/gallery/exterior/exterior12.jpeg', title: "Si&SoConversions", alt: "exteriorProject" },
+    { src: '/images/gallery/exterior/exterior13.jpeg', title: "Si&SoConversions", alt: "exteriorProject" },
+    { src: '/images/gallery/exterior/exterior14.jpeg', title: "Si&SoConversions", alt: "exteriorProject" },
+    { src: '/images/gallery/exterior/exterior15.jpeg', title: "Si&SoConversions", alt: "exteriorProject" },
+    { src: '/images/gallery/exterior/exterior16.jpeg', title: "Si&SoConversions", alt: "exteriorProject" },
+    { src: '/images/gallery/exterior/exterior17.jpeg', title: "Si&SoConversions", alt: "exteriorProject" },
+    { src: '/images/gallery/exterior/exterior18.jpeg', title: "Si&SoConversions", alt: "exteriorProject" },
+    { src: '/images/gallery/exterior/exterior19.jpeg', title: "Si&SoConversions", alt: "exteriorProject" },
+    { src: '/images/gallery/exterior/exterior20.jpeg', title: "Si&SoConversions", alt: "exteriorProject" },
+    { src: '/images/gallery/exterior/exterior21.jpeg', title: "Si&SoConversions", alt: "exteriorProject" },
+    { src: '/images/gallery/exterior/exterior22.jpeg', title: "Si&SoConversions", alt: "exteriorProject" },
+    { src: '/images/gallery/exterior/exterior23.jpeg', title: "Si&SoConversions", alt: "exteriorProject" },
+    { src: '/images/gallery/exterior/exterior24.jpeg', title: "Si&SoConversions", alt: "exteriorProject" },
+    { src: '/images/gallery/exterior/exterior25.jpeg', title: "Si&SoConversions", alt: "exteriorProject" },
+    { src: '/images/gallery/exterior/exterior26.jpeg', title: "Si&SoConversions", alt: "exteriorProject" },
+    { src: '/images/gallery/exterior/exterior27.jpeg', title: "Si&SoConversions", alt: "exteriorProject" },
+    { src: '/images/gallery/exterior/exterior28.jpeg', title: "Si&SoConversions", alt: "exteriorProject" },
+    { src: '/images/gallery/exterior/exterior29.jpeg', title: "Si&SoConversions", alt: "exteriorProject" },
+    { src: '/images/gallery/exterior/exterior30.jpeg', title: "Si&SoConversions", alt: "exteriorProject" },
+    { src: '/images/gallery/exterior/exterior31.jpeg', title: "Si&SoConversions", alt: "exteriorProject" },
+    { src: '/images/gallery/exterior/exterior32.jpeg', title: "Si&SoConversions", alt: "exteriorProject" },
+    { src: '/images/gallery/exterior/exterior33.jpeg', title: "Si&SoConversions", alt: "exteriorProject" },
+    { src: '/images/gallery/exterior/exterior34.jpeg', title: "Si&SoConversions", alt: "exteriorProject" },
+    { src: '/images/gallery/exterior/exterior35.jpeg', title: "Si&SoConversions", alt: "exteriorProject" },
+    { src: '/images/gallery/exterior/exterior36.jpeg', title: "Si&SoConversions", alt: "exteriorProject" },
+    { src: '/images/gallery/exterior/exterior37.jpeg', title: "Si&SoConversions", alt: "exteriorProject" },
+    { src: '/images/gallery/exterior/exterior38.jpeg', title: "Si&SoConversions", alt: "exteriorProject" }
+  ],
+  'bespoke-projects': [
+    { src: '/images/gallery/bespoke/bes1.jpeg', title: "Si&SoConversions", alt: "bespokeProject" },
+    { src: '/images/gallery/bespoke/bes2.jpeg', title: "Si&SoConversions", alt: "bespokeProject" },
+    { src: '/images/gallery/bespoke/bes3.jpeg', title: "Si&SoConversions", alt: "bespokeProject" },
+    { src: '/images/gallery/bespoke/bes4.jpeg', title: "Si&SoConversions", alt: "bespokeProject" },
+    { src: '/images/gallery/bespoke/bes5.jpeg', title: "Si&SoConversions", alt: "bespokeProject" },
+    { src: '/images/gallery/bespoke/bes6.jpeg', title: "Si&SoConversions", alt: "bespokeProject" },
+    { src: '/images/gallery/bespoke/bes7.jpeg', title: "Si&SoConversions", alt: "bespokeProject" },
+    { src: '/images/gallery/bespoke/bes8.jpeg', title: "Si&SoConversions", alt: "bespokeProject" },
+    { src: '/images/gallery/bespoke/bes9.jpeg', title: "Si&SoConversions", alt: "bespokeProject" },
+    { src: '/images/gallery/bespoke/bes10.jpeg', title: "Si&SoConversions", alt: "bespokeProject" },
+    { src: '/images/gallery/bespoke/bes11.jpeg', title: "Si&SoConversions", alt: "bespokeProject" },
+    { src: '/images/gallery/bespoke/bes12.jpeg', title: "Si&SoConversions", alt: "bespokeProject" },
+    { src: '/images/gallery/bespoke/bes13.jpeg', title: "Si&SoConversions", alt: "bespokeProject" },
+    { src: '/images/gallery/bespoke/bes14.jpeg', title: "Si&SoConversions", alt: "bespokeProject" },
+    { src: '/images/gallery/bespoke/bes15.jpeg', title: "Si&SoConversions", alt: "bespokeProject" },
+    { src: '/images/gallery/bespoke/bes16.jpeg', title: "Si&SoConversions", alt: "bespokeProject" },
+    { src: '/images/gallery/bespoke/bes17.jpeg', title: "Si&SoConversions", alt: "bespokeProject" },
+    { src: '/images/gallery/bespoke/bes18.jpeg', title: "Si&SoConversions", alt: "bespokeProject" },
+    { src: '/images/gallery/bespoke/bes19.jpeg', title: "Si&SoConversions", alt: "bespokeProject" },
+    { src: '/images/gallery/bespoke/bes20.jpeg', title: "Si&SoConversions", alt: "bespokeProject" },
+    { src: '/images/gallery/bespoke/bes21.jpeg', title: "Si&SoConversions", alt: "bespokeProject" },
+    { src: '/images/gallery/bespoke/bes22.jpeg', title: "Si&SoConversions", alt: "bespokeProject" },
+    { src: '/images/gallery/bespoke/bes23.jpeg', title: "Si&SoConversions", alt: "bespokeProject" },
+    { src: '/images/gallery/bespoke/bes24.jpeg', title: "Si&SoConversions", alt: "bespokeProject" },
+    { src: '/images/gallery/bespoke/bes25.jpeg', title: "Si&SoConversions", alt: "bespokeProject" },
+    { src: '/images/gallery/bespoke/bes26.jpeg', title: "Si&SoConversions", alt: "bespokeProject" },
+    { src: '/images/gallery/bespoke/bes27.jpeg', title: "Si&SoConversions", alt: "bespokeProject" },
+    { src: '/images/gallery/bespoke/bes28.jpeg', title: "Si&SoConversions", alt: "bespokeProject" },
+    { src: '/images/gallery/bespoke/bes29.jpeg', title: "Si&SoConversions", alt: "bespokeProject" },
+    { src: '/images/gallery/bespoke/bes30.jpeg', title: "Si&SoConversions", alt: "bespokeProject" }
+
+  ],
+  'bathroom-projects': [
+    { src: '/images/gallery/bathrooms/bath1.jpeg', title: "Si&SoConversions", alt: "bathroomProjects" },
+    { src: '/images/gallery/bathrooms/bath2.jpeg', title: "Si&SoConversions", alt: "bathroomProjects" },
+    { src: '/images/gallery/bathrooms/bath3.jpeg', title: "Si&SoConversions", alt: "bathroomProjects" },
+    { src: '/images/gallery/bathrooms/bath4.jpeg', title: "Si&SoConversions", alt: "bathroomProjects" },
+    { src: '/images/gallery/bathrooms/bath5.jpeg', title: "Si&SoConversions", alt: "bathroomProjects" },
+    { src: '/images/gallery/bathrooms/bath6.jpeg', title: "Si&SoConversions", alt: "bathroomProjects" },
+    { src: '/images/gallery/bathrooms/bath7.jpeg', title: "Si&SoConversions", alt: "bathroomProjects" },
+    { src: '/images/gallery/bathrooms/bath8.jpeg', title: "Si&SoConversions", alt: "bathroomProjects" },
+    { src: '/images/gallery/bathrooms/bath9.jpeg', title: "Si&SoConversions", alt: "bathroomProjects" },
+    { src: '/images/gallery/bathrooms/bath10.jpeg', title: "Si&SoConversions", alt: "bathroomProjects" },
+    { src: '/images/gallery/bathrooms/bath11.jpeg', title: "Si&SoConversions", alt: "bathroomProjects" },
+    { src: '/images/gallery/bathrooms/bath12.jpeg', title: "Si&SoConversions", alt: "bathroomProjects" },
+    { src: '/images/gallery/bathrooms/bath13.jpeg', title: "Si&SoConversions", alt: "bathroomProjects" },
+    { src: '/images/gallery/bathrooms/bath14.jpeg', title: "Si&SoConversions", alt: "bathroomProjects" },
+    { src: '/images/gallery/bathrooms/bath15.jpeg', title: "Si&SoConversions", alt: "bathroomProjects" },
+    { src: '/images/gallery/bathrooms/bath16.jpeg', title: "Si&SoConversions", alt: "bathroomProjects" },
+    { src: '/images/gallery/bathrooms/bath17.jpeg', title: "Si&SoConversions", alt: "bathroomProjects" },
+    { src: '/images/gallery/bathrooms/bath18.jpeg', title: "Si&SoConversions", alt: "bathroomProjects" },
+    { src: '/images/gallery/bathrooms/bath19.jpeg', title: "Si&SoConversions", alt: "bathroomProjects" },
+    { src: '/images/gallery/bathrooms/bath20.jpeg', title: "Si&SoConversions", alt: "bathroomProjects" },
+    { src: '/images/gallery/bathrooms/bath21.jpeg', title: "Si&SoConversions", alt: "bathroomProjects" },
+    { src: '/images/gallery/bathrooms/bath22.jpeg', title: "Si&SoConversions", alt: "bathroomProjects" },
+    { src: '/images/gallery/bathrooms/bath23.jpeg', title: "Si&SoConversions", alt: "bathroomProjects" },
+    { src: '/images/gallery/bathrooms/bath24.jpeg', title: "Si&SoConversions", alt: "bathroomProjects" },
+    { src: '/images/gallery/bathrooms/bath25.jpeg', title: "Si&SoConversions", alt: "bathroomProjects" },
+    { src: '/images/gallery/bathrooms/bath26.jpeg', title: "Si&SoConversions", alt: "bathroomProjects" },
+    { src: '/images/gallery/bathrooms/bath27.jpeg', title: "Si&SoConversions", alt: "bathroomProjects" },
+    { src: '/images/gallery/bathrooms/bath28.jpeg', title: "Si&SoConversions", alt: "bathroomProjects" },
+    { src: '/images/gallery/bathrooms/bath29.jpeg', title: "Si&SoConversions", alt: "bathroomProjects" }
+  ],
+  'flooring-designs': [
+    { src: '/images/gallery/flooring/floor1.jpeg', title: "Si&SoConversions", alt: "floorDesign" },
+    { src: '/images/gallery/flooring/floor2.jpeg', title: "Si&SoConversions", alt: "floorDesign" },
+    { src: '/images/gallery/flooring/floor3.jpeg', title: "Si&SoConversions", alt: "floorDesign" },
+    { src: '/images/gallery/flooring/floor4.jpeg', title: "Si&SoConversions", alt: "floorDesign" },
+    { src: '/images/gallery/flooring/floor5.jpeg', title: "Si&SoConversions", alt: "floorDesign" },
+    { src: '/images/gallery/flooring/floor6.jpeg', title: "Si&SoConversions", alt: "floorDesign" },
+    { src: '/images/gallery/flooring/floor7.jpeg', title: "Si&SoConversions", alt: "floorDesign" },
+    { src: '/images/gallery/flooring/floor8.jpeg', title: "Si&SoConversions", alt: "floorDesign" },
+    { src: '/images/gallery/flooring/floor9.jpeg', title: "Si&SoConversions", alt: "floorDesign" },
+    { src: '/images/gallery/flooring/floor10.jpeg', title: "Si&SoConversions", alt: "floorDesign" },
+    { src: '/images/gallery/flooring/floor11.jpeg', title: "Si&SoConversions", alt: "floorDesign" },
+    { src: '/images/gallery/flooring/floor12.jpeg', title: "Si&SoConversions", alt: "floorDesign" },
+    { src: '/images/gallery/flooring/floor13.jpeg', title: "Si&SoConversions", alt: "floorDesign" },
+    { src: '/images/gallery/flooring/floor14.jpeg', title: "Si&SoConversions", alt: "floorDesign" },
+    { src: '/images/gallery/flooring/floor15.jpeg', title: "Si&SoConversions", alt: "floorDesign" },
+    { src: '/images/gallery/flooring/floor16.jpeg', title: "Si&SoConversions", alt: "floorDesign" },
+    { src: '/images/gallery/flooring/floor17.jpeg', title: "Si&SoConversions", alt: "floorDesign" },
+    { src: '/images/gallery/flooring/floor18.jpeg', title: "Si&SoConversions", alt: "floorDesign" },
+    { src: '/images/gallery/flooring/floor19.jpeg', title: "Si&SoConversions", alt: "floorDesign" },
+    { src: '/images/gallery/flooring/floor20.jpeg', title: "Si&SoConversions", alt: "floorDesign" },
+    { src: '/images/gallery/flooring/floor21.jpeg', title: "Si&SoConversions", alt: "floorDesign" },
+    { src: '/images/gallery/flooring/floor22.jpeg', title: "Si&SoConversions", alt: "floorDesign" },
+    { src: '/images/gallery/flooring/floor23.jpeg', title: "Si&SoConversions", alt: "floorDesign" },
+    { src: '/images/gallery/flooring/floor24.jpeg', title: "Si&SoConversions", alt: "floorDesign" },
+    { src: '/images/gallery/flooring/floor25.jpeg', title: "Si&SoConversions", alt: "floorDesign" }
+  ]
+};
+
+
+
 
 export const testimonials = [
   {
@@ -139,9 +330,3 @@ export const whyChooseUs = [
   "Full Project Management",
   "Locally Trusted"
 ];
-export const customIcon = new L.Icon({
-  iconUrl: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" style="enable-background:new 0 0 128 128" xml:space="preserve"><path style="fill:#539dd6" d="M66.441 4.883c-25.941 0-46.971 21.03-46.971 46.971C19.47 95.71 64 126.498 64 126.498s46.971-32.875 46.971-78.306c0-25.941-18.588-43.309-44.53-43.309zM65.221 85.5c-20.604 0-37.307-16.703-37.307-37.308 0-20.603 16.703-37.307 37.307-37.307 20.604 0 37.306 16.704 37.306 37.307 0 20.605-16.703 37.308-37.306 37.308z"/><path style="fill:#4692c1" d="M64 126.498s46.971-32.875 46.971-78.306c0-25.941-19.485-44.454-46.971-43.247v7.161c20.604 0 36.086 15.483 36.086 36.087 0 20.604-15.482 36.087-36.086 36.087v42.218z"/><circle style="fill:#ba8a8c" cx="64" cy="48.193" r="36.006"/><path style="fill:#1e1e1e" d="m63.983 128-.706-.517c-.474-.348-47.469-35.325-47.469-79.29C15.808 21.619 37.427 0 64 0s48.192 21.619 48.192 48.192c0 45.54-47.016 78.973-47.492 79.306l-.717.502zM64 2.441c-25.226 0-45.751 20.524-45.751 45.751 0 39.797 39.927 72.252 45.766 76.782 5.874-4.371 45.735-35.576 45.735-76.782C109.751 22.965 89.226 2.441 64 2.441zm0 82.98c-20.527 0-37.227-16.7-37.227-37.229 0-20.527 16.7-37.227 37.227-37.227s37.227 16.7 37.227 37.227c0 20.528-16.7 37.229-37.227 37.229zm0-72.015c-19.181 0-34.786 15.605-34.786 34.786C29.214 67.374 44.819 82.98 64 82.98s34.786-15.606 34.786-34.788c0-19.181-15.605-34.786-34.786-34.786z"/><g><path style="fill:#ffc176" d="M89.412 48.6h-7.016v19.145H72.99V55.481H57.451v12.265H48.04V48.6h-7.016c-.883 0-1.091-.504-.457-1.128l23.5-23.017a1.66 1.66 0 0 1 2.302 0l23.506 23.017c.634.624.426 1.128-.463 1.128z"/><path style="fill:#1e1e1e" d="M90.728 46.6 67.222 23.58a2.89 2.89 0 0 0-4.01.002L39.71 46.602c-.956.94-.747 1.803-.614 2.13s.59 1.088 1.927 1.088h5.795v19.146h11.853V56.701h13.097v12.265h11.848V49.82h5.795c1.341 0 1.797-.762 1.932-1.089.135-.327.344-1.19-.615-2.131zM74.21 66.525V54.26H56.231v12.265H49.26v-17.41l15.96-15.516 15.955 15.516v17.41H74.21zm8.682-19.146L65.221 30.194 47.546 47.378l-5.134-.004L64.92 25.329a.44.44 0 0 1 .597-.002l22.51 22.052h-5.135z"/></g></svg>', // pode ser um arquivo local ou link externo
-  iconSize: [80, 60], // tamanho do ícone (largura, altura)
-  iconAnchor: [30, 40], // ponto do ícone que ficará no ponto do mapa (meio base)
-  popupAnchor: [0, -40], // ponto para abrir o popup em relação ao ícone
-});
