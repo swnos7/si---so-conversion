@@ -3,7 +3,7 @@ import React, { useRef, useState } from 'react';
 import { motion } from 'framer-motion';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import { galleryCategories, galleryItemsByCategory, } from '@/data/content';
+import { galleryCategories, galleryItemsByCategory, galleryItems } from '@/data/content';
 
 const Gallery = ({ onImageClick, onCategoryChange }) => {
   const scrollContainerRef = useRef(null);
@@ -27,7 +27,7 @@ const Gallery = ({ onImageClick, onCategoryChange }) => {
       Object.values(galleryItemsByCategory).forEach(categoryItems => {
         allItems.push(...categoryItems);
       });
-      return allItems;
+      return allItems.length > 0 ? allItems : galleryItems; // Fallback to legacy items
     }
     return galleryItemsByCategory[activeCategory] || [];
   };

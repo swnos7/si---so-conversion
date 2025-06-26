@@ -75,7 +75,7 @@ export const services = [
 
 // Gallery categories for filtering - Updated with your specific services
 export const galleryCategories = [
-  { id: 'all', label: 'All Projects' },
+  { id: 'all', label: 'All' },
   { id: 'conversions', label: 'Conversions' },
   { id: 'extensions', label: 'Extensions' },
   { id: 'exterior-projects', label: 'Exterior Projects' },
@@ -274,7 +274,17 @@ export const galleryItemsByCategory = {
   ]
 };
 
-
+// Legacy gallery items for backward compatibility
+export const galleryItems = [
+  { src: '', title: "", alt: "" },
+  { src: '', title: "", alt: "" },
+  { src: '', title: "", alt: "" },
+  { src: '', title: "", alt: "" },
+  { src: '', title: "", alt: "" },
+  { src: '', title: "", alt: "" },
+  { src: '', title: "", alt: "" },
+  { src: '', title: "", alt: "" }
+];
 
 
 export const testimonials = [
