@@ -27,7 +27,7 @@ const Gallery = ({ onImageClick, onCategoryChange }) => {
       Object.values(galleryItemsByCategory).forEach(categoryItems => {
         allItems.push(...categoryItems);
       });
-      return allItems.length > 0 ? allItems : galleryItems; // Fallback to legacy items
+      return allItems;
     }
     return galleryItemsByCategory[activeCategory] || [];
   };
