@@ -3,7 +3,7 @@ import React, { useRef, useState } from 'react';
 import { motion } from 'framer-motion';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import { galleryCategories, galleryItemsByCategory, galleryItems } from '@/data/content';
+import { galleryCategories, galleryItemsByCategory, } from '@/data/content';
 
 const Gallery = ({ onImageClick, onCategoryChange }) => {
   const scrollContainerRef = useRef(null);
