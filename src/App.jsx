@@ -74,8 +74,8 @@ function App() {
   return (
     <>
       <Helmet>
-        <title>SI & SO Conversions - Professional Construction & Home Conversions</title>
-        <meta name="description" content="Transform your home with SI & SO Conversions. Expert loft conversions, home extensions, refurbishments, and construction services. Quality workmanship guaranteed." />
+        <title>Si & So Conversions - Professional Construction & Home Conversions</title>
+        <meta name="description" content="Transform your home with Si & So Conversions. Expert loft conversions, home extensions, refurbishments, and construction services. Quality workmanship guaranteed." />
         <link rel="icon" type="image/x-icon" href="/favicon.ico" />
       </Helmet>
 

@@ -25,7 +25,7 @@ const About = () => {
           >
             <h2 className="text-4xl md:text-5xl font-bold text-yellow-500 mb-6">ABOUT US</h2>
             <p className="text-lg text-gray-300 mb-6">
-              With over 15 years of industry experience, SI & SO Conversions stands as a beacon of quality and reliability in the construction sector. We are a team of dedicated professionals committed to turning your vision into reality.
+              With over 15 years of industry experience, Si & So Conversions stands as a beacon of quality and reliability in the construction sector. We are a team of dedicated professionals committed to turning your vision into reality.
             </p>
             <p className="text-lg text-gray-300 mb-8">
               Our core values are transparency, excellence, and client satisfaction. We handle every project, big or small, with the same level of passion and precision.
