@@ -35,7 +35,7 @@ const Footer = () => {
           </div>
 
           <div>
-            <p className="font-semibold text-white uppercase tracking-wider mb-4">Follow Us</p>
+            <p className="font-semibold text-white uppercase tracking-wider mb-4">Our Contacts</p>
             <div className="flex justify-center md:justify-start space-x-4">
               {socialLinks.map((link) => (
                 <a key={link.name} href={link.href} target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-yellow-400 transition-colors">
