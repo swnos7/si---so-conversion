@@ -47,6 +47,7 @@ const Footer = () => {
           </div>
         </div>
         
+        
         <div className="mt-12 pt-8 border-t border-gray-800 text-center text-sm">
           <p>&copy; {currentYear} {company.name}. All Rights Reserved.</p>
         </div>

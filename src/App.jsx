@@ -14,6 +14,7 @@ import Gallery from '@/components/sections/Gallery';
 import Testimonials from '@/components/sections/Testimonials';
 import Team from '@/components/sections/Team';
 import Contact from '@/components/sections/Contact';
+import Suppliers from '@/components/sections/Suppliers';
 import GalleryModal from '@/components/ui/GalleryModal';
 import { galleryItems, galleryItemsByCategory } from '@/data/content';
 
@@ -86,6 +87,7 @@ function App() {
           <Hero scrollToSection={scrollToSection} />
           <SectionWrapper><Features /></SectionWrapper>
           <SectionWrapper><About /></SectionWrapper>
+          <SectionWrapper><Suppliers /></SectionWrapper>
           <SectionWrapper><Services /></SectionWrapper>
           <SectionWrapper>
             <Gallery 

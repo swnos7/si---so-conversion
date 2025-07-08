@@ -14,12 +14,22 @@ export const company = {
 export const navLinks = [
   { id: 'features', label: 'FEATURES' },
   { id: 'about', label: 'ABOUT' },
+  { id: 'suppliers', label: 'SUPPLIERS'},
   { id: 'services', label: 'SERVICES' },
   { id: 'gallery', label: 'GALLERY' },
   { id: 'testimonials', label: 'TESTIMONIALS' },
   { id: 'team', label: 'TEAM' },
   { id: 'contact', label: 'CONTACT' }
+  
 ];
+
+export const suppliersLogos = [
+    { src: 'icons/Suppliers/cdnlogo.com_dulux-paints.png', alt: 'DeluxPaint' },
+    { src: 'icons/Suppliers/jewson-seeklogo.png', alt: 'Jewson' },
+    { src: 'icons/Suppliers/wrenkitchen.png', alt: 'WrenKitchen' },
+    { src: 'icons/Suppliers/mkm-building-supplies-limited-logo-vector-2022.svg', alt: 'MKM' },
+    { src: 'icons/Suppliers/eurocell-select-vector-logo.svg', alt: 'EuroCell' },
+]
 
 export const features = [
   {
