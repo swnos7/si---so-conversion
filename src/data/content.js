@@ -1,8 +1,7 @@
 export const company = {
   name: "Si & So Conversions",
   logoLight: 'images/logo/LOGO.svg',
-  phone1: "07763 739281",
-  phone2: "07399 282178",
+  phone1: "+44 0161 641 2887",
   email: "s.s.convertions@gmail.com",
   address: "Unit 37, Willian Industrial Estate, Salford, M50 2GR",
   coordinates: {
@@ -91,7 +90,9 @@ export const galleryCategories = [
   { id: 'exterior-projects', label: 'Exterior Projects' },
   { id: 'bespoke-projects', label: 'Bespoke Projects' },
   { id: 'bathroom-projects', label: 'Bathroom Projects' },
-  { id: 'flooring-designs', label: 'Flooring Designs' }
+  { id: 'flooring-designs', label: 'Flooring Designs' },
+  { id: 'kitchen-projects', label: 'Kitchen Projects' },
+  { id: 'Basements', label: 'Basements' }
 ];
 
 // Gallery items organized by service category
