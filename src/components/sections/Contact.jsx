@@ -132,7 +132,7 @@ const Contact = () => {
                 <Phone className="w-6 h-6 mt-1 flex-shrink-0 text-yellow-500" />
                 <div>
                   <p className="font-semibold text-white mb-1">Phone</p>
-                  <p className="text-gray-400">{company.phone1}, {company.phone2}</p>
+                  <p className="text-gray-400">{company.phone1}</p>
                 </div>
               </div>
 

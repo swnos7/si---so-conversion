@@ -1,6 +1,6 @@
 // src/components/sections/Suppliers.jsx
-import React, { useRef, useEffect, useState, useCallback } from 'react';
-import { motion, useMotionValue, useSpring, animate } from 'framer-motion';
+import React, { useRef, useEffect, useState } from 'react';
+import { motion, useMotionValue, animate } from 'framer-motion';
 import { suppliersLogos } from '@/data/content';
 
 const Suppliers = () => {
@@ -10,118 +10,111 @@ const Suppliers = () => {
 
   // Framer Motion motion value for the horizontal scroll position
   const x = useMotionValue(0);
-  const springX = useSpring(x, { stiffness: 100, damping: 30 }); // Smooth spring motion for x
+
+  const [itemWidth, setItemWidth] = useState(0);
 
   // --- Configuration ---
-  const logoItemWidth = 200; // Expected width of each logo container (including padding/margin). CRITICAL for accuracy.
   const scrollSpeed = 50; // Pixels per second (higher = faster)
-  const rotationDegrees = 90; // Degrees for entry/exit rotation (This variable is no longer used for entry rotation)
   const centerZoomScale = 1.2; // Scale factor for the center logo
-  const numVisibleLogos = 5; // Approximate number of logos visible at once, helps with triggering animations
 
-  // Duplicate suppliers to ensure enough content for the loop (at least 2-3 times what's visible)
-  const duplicatedSuppliers = Array(Math.max(3, Math.ceil(numVisibleLogos * 2.5))).fill(suppliers).flat();
+  // Duplicate suppliers to create a seamless loop. Using 3 copies is robust for various screen sizes.
+  const duplicatedSuppliers = [...suppliers, ...suppliers, ...suppliers];
 
   // Framer Motion variants for individual logo entry/exit and center zoom
   const logoVariants = {
-    // Hidden state for elements off-screen or animating out
-    hidden: {
-      opacity: 0,
-      scale: 0.5,
-      y: 20,
-      rotateZ: 0, // Changed to 0 to remove rotation on entry from the right
-      transition: { duration: 0.5, ease: "easeOut" }
-    },
-    // Visible state for elements currently in normal view
-    visible: {
-      opacity: 1,
-      scale: 1,
-      y: 0,
-      rotateZ: 0, // No rotation when visible
-      transition: { duration: 0.8, ease: "easeOut" }
-    },
-    // Exit state for elements moving off-screen
-    exit: {
-      opacity: 0,
-      scale: 0.5,
-      y: -20, // Move slightly up as they exit
-      rotateZ: rotationDegrees, // Retained rotation for exit on the left side
-      transition: { duration: 0.5, ease: "easeIn" }
-    },
     // Center state for the zoomed logo
     center: {
       scale: centerZoomScale,
-      transition: { duration: 0.3, ease: "easeOut" }
+      transition: { duration: 0.3, ease: "easeOut" },
     },
     // Normal state when leaving center
     normal: {
       scale: 1,
-      transition: { duration: 0.3, ease: "easeOut" }
-    }
+      transition: { duration: 0.3, ease: "easeOut" },
+    },
   };
 
   // State to store the index of the currently "centered" logo
   const [centeredLogoIndex, setCenteredLogoIndex] = useState(null);
 
-  // --- Core Scroll Animation Loop ---
-  const startScrolling = useCallback(() => {
-    let animation;
-    let currentX = 0; // Tracks the visual position
-    let lastTime = performance.now();
+  // Effect to measure the width of a single logo item after it renders
+  useEffect(() => {
+    if (logoRefs.current[0]) {
+      const firstLogo = logoRefs.current[0];
+      const style = window.getComputedStyle(firstLogo);
+      const marginRight = parseFloat(style.marginRight);
+      const marginLeft = parseFloat(style.marginLeft);
+      // getBoundingClientRect().width includes padding and border due to box-sizing
+      const fullWidth = firstLogo.getBoundingClientRect().width + marginLeft + marginRight;
+      setItemWidth(fullWidth);
+    }
+  }, [suppliers.length]);
 
-    const animateScroll = (timestamp) => {
-      if (!scrollerRef.current) return;
+  // --- Core Infinite Scroll Animation ---
+  useEffect(() => {
+    if (!scrollerRef.current || suppliers.length === 0 || itemWidth === 0) return;
 
-      const deltaTime = timestamp - lastTime;
-      lastTime = timestamp;
+    // The total width of a single set of logos
+    const singleSetWidth = suppliers.length * itemWidth;
 
-      // Calculate how much to move based on speed and delta delta
-      currentX -= (scrollSpeed / 1000) * deltaTime; // Convert speed to px/ms
+    // The animation will move the scroller from x=0 to x=-singleSetWidth.
+    // Because the content is duplicated, when it loops back to x=0, it appears seamless.
+    const animation = animate(x, -singleSetWidth, {
+      ease: "linear",
+      duration: singleSetWidth / scrollSpeed,
+      repeat: Infinity,
+      repeatType: "loop", // "loop" resets the animation to the start value
+    });
 
-      // Loop logic: When the entire track has scrolled past its original width, reset
-      if (Math.abs(currentX) >= suppliers.length * logoItemWidth) {
-        currentX += suppliers.length * logoItemWidth; // Reset by adding back one set's width
-      }
+    // Cleanup function to stop the animation when the component unmounts
+    return () => animation.stop();
+  }, [suppliers.length, x, scrollSpeed, itemWidth]);
 
-      x.set(currentX); // Update the Framer Motion value
+  // --- Centered Logo Detection ---
+  useEffect(() => {
+    let animationFrameId;
+    let lastCenteredIndex = null;
 
-      // Determine the centered logo
-      const containerRect = scrollerRef.current.getBoundingClientRect();
+    const findCenteredLogo = () => {
+      if (!scrollerRef.current || !scrollerRef.current.parentElement) {
+        animationFrameId = requestAnimationFrame(findCenteredLogo);
+        return;
+      };
+
+      const containerRect = scrollerRef.current.parentElement.getBoundingClientRect();
       const containerCenterX = containerRect.left + containerRect.width / 2;
 
       let newCenteredIndex = null;
+      let smallestDistance = Infinity;
+
       logoRefs.current.forEach((logoEl, idx) => {
         if (!logoEl) return;
         const logoRect = logoEl.getBoundingClientRect();
         const logoCenterX = logoRect.left + logoRect.width / 2;
+        const distance = Math.abs(logoCenterX - containerCenterX);
 
-        // Check if logo is approximately in the center
-        // Adjust the 'tolerance' (e.g., logoItemWidth / 2) based on how wide your "center zone" is
-        if (Math.abs(logoCenterX - containerCenterX) < logoItemWidth / 2) {
-          newCenteredIndex = idx;
+        // Find the logo closest to the center
+        if (distance < smallestDistance) {
+          smallestDistance = distance;
+          // Check if it's within the "center zone" (half the item width)
+          if (distance < itemWidth / 2) {
+            newCenteredIndex = idx;
+          }
         }
       });
 
-      if (newCenteredIndex !== centeredLogoIndex) {
+      if (newCenteredIndex !== lastCenteredIndex) {
         setCenteredLogoIndex(newCenteredIndex);
+        lastCenteredIndex = newCenteredIndex;
       }
 
-      animation = requestAnimationFrame(animateScroll);
+      animationFrameId = requestAnimationFrame(findCenteredLogo);
     };
 
-    animation = requestAnimationFrame(animateScroll);
+    animationFrameId = requestAnimationFrame(findCenteredLogo);
 
-    return () => cancelAnimationFrame(animation); // Cleanup on unmount
-  }, [suppliers.length, x, scrollSpeed, logoItemWidth, centeredLogoIndex]);
-
-  useEffect(() => {
-    if (suppliers.length > 0) {
-      // Initialize x to a position that centers the first few logos well
-      x.set(-logoItemWidth * Math.floor(duplicatedSuppliers.length / 2));
-      const cleanupScroll = startScrolling();
-      return () => cleanupScroll();
-    }
-  }, [suppliers.length, startScrolling]);
+    return () => cancelAnimationFrame(animationFrameId);
+  }, [itemWidth]); // Rerun if the item width changes
 
   // --- Render ---
   if (suppliers.length === 0) {
@@ -179,7 +172,7 @@ const Suppliers = () => {
           <motion.div
             ref={scrollerRef}
             className="flex transform-gpu" // Use transform-gpu for performance
-            style={{ x: springX }} // Bind Framer Motion's motion value to 'x' transform
+            style={{ x }} // Bind Framer Motion's motion value to 'x' transform
           >
             {duplicatedSuppliers.map((supplier, index) => {
               const isBeesley = supplier.alt === 'Beesley';
@@ -203,16 +196,10 @@ const Suppliers = () => {
                 <motion.div
                   key={`${supplier.src}-${index}`} // Unique key for each duplicated item
                   ref={(el) => (logoRefs.current[index] = el)} // Store ref for measurement
-                  className="flex-shrink-0 flex flex-col justify-center items-center h-24 p-2 mx-4"
-                  style={{ width: `${logoItemWidth - 32}px` }}
+                  className="flex-shrink-0 flex flex-col justify-center items-center h-24 p-2 mx-4 w-[168px]"
                   // Framer Motion animation properties for individual logo
                   variants={logoVariants}
-                  initial="hidden"
                   animate={centeredLogoIndex === index ? "center" : "normal"} // Animate to center or normal scale
-                  whileInView={logoVariants.visible} // Animate opacity, scale when it enters viewport (rotation removed)
-                  exit={logoVariants.exit} // Animate out when leaving viewport (rotation retained for left exit)
-                  viewport={{ amount: 0.5 }} // Adjust amount for when to trigger whileInView
-                  // No explicit 'transition' delay here; the scroll rate provides the stagger
                 >
                   <img
                     src={supplier.src}
