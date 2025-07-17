@@ -16,7 +16,7 @@ export const navLinks = [
   { id: 'suppliers', label: 'SUPPLIERS'},
   { id: 'services', label: 'SERVICES' },
   { id: 'gallery', label: 'GALLERY' },
-  { id: 'testimonials', label: 'TESTIMONIALS' },
+  { id: 'Reviews', label: 'REVIEWS' },
   { id: 'team', label: 'TEAM' },
   { id: 'contact', label: 'CONTACT' }
   
@@ -298,7 +298,7 @@ export const galleryItems = [
 ];
 
 
-export const testimonials = [
+export const reviews = [
   {
     text: "Working with Si & So Conversions was a game-changer for our business. Their professionalism and attention to detail ensured our project was completed on time and exceeded expectations.",
     author: "andre oliveira"

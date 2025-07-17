@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 // Button import is no longer needed as no custom buttons are present
 // import { Button } from '@/components/ui/button'; 
 
-const Testimonials = () => {
+const Reviews = () => {
   useEffect(() => {
     // Dynamically create and append the Elfsight script to the body
     // This ensures the script loads after the component is mounted
@@ -22,7 +22,7 @@ const Testimonials = () => {
   }, []); // Empty dependency array ensures this effect runs only once on mount
 
   return (
-    <section id="testimonials" className="py-20 bg-black">
+    <section id="Reviews" className="py-20 bg-black">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Removed the custom title "WHAT OUR CLIENTS SAY" */}
         
@@ -35,4 +35,4 @@ const Testimonials = () => {
     </section>
   );
 };
-export default Testimonials;
+export default Reviews;

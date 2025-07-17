@@ -11,7 +11,7 @@ import Features from '@/components/sections/Features';
 import About from '@/components/sections/About';
 import Services from '@/components/sections/Services';
 import Gallery from '@/components/sections/Gallery';
-import Testimonials from '@/components/sections/Testimonials';
+import Reviews from '@/components/sections/Reviews';
 import Team from '@/components/sections/Team';
 import Contact from '@/components/sections/Contact';
 import Suppliers from '@/components/sections/Suppliers';
@@ -95,7 +95,7 @@ function App() {
               onCategoryChange={handleCategoryChange}
             />
           </SectionWrapper>
-          <SectionWrapper><Testimonials /></SectionWrapper>
+          <SectionWrapper><Reviews /></SectionWrapper>
           <SectionWrapper><Team /></SectionWrapper>
           <SectionWrapper><Contact /></SectionWrapper>
         </main>
