@@ -1,54 +1,38 @@
-import React, { useState } from 'react';
-import { Button } from '@/components/ui/button';
-import { testimonials } from '@/data/content.js';
+import React, { useEffect } from 'react';
+// Button import is no longer needed as no custom buttons are present
+// import { Button } from '@/components/ui/button'; 
 
 const Testimonials = () => {
-  const [currentTestimonial, setCurrentTestimonial] = useState(0);
+  useEffect(() => {
+    // Dynamically create and append the Elfsight script to the body
+    // This ensures the script loads after the component is mounted
+    const script = document.createElement('script');
+    script.src = "https://static.elfsight.com/platform/platform.js";
+    script.async = true;
+    script.dataset.elfsightAppLazy = true; // Keep the lazy loading attribute if needed
+    document.body.appendChild(script);
 
-  const nextTestimonial = () => {
-    setCurrentTestimonial((prev) => (prev + 1) % testimonials.length);
-  };
-
-  const prevTestimonial = () => {
-    setCurrentTestimonial((prev) => (prev - 1 + testimonials.length) % testimonials.length);
-  };
+    // Clean up the script when the component unmounts
+    return () => {
+      // Check if the script exists before trying to remove it
+      if (document.body.contains(script)) {
+        document.body.removeChild(script);
+      }
+    };
+  }, []); // Empty dependency array ensures this effect runs only once on mount
 
   return (
     <section id="testimonials" className="py-20 bg-black">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-yellow-500 mb-4">WHAT OUR CLIENTS SAY</h2>
-        </div>
+        {/* Removed the custom title "WHAT OUR CLIENTS SAY" */}
+        
+        {/* Elfsight Google Reviews Widget container */}
+        {/* The script loaded by useEffect will find this div and inject the widget here */}
+        <div class="elfsight-app-69511ec5-53eb-4e41-ae19-62dae8b6972e"></div>
 
-        <div className="relative">
-          <div className="text-center min-h-[200px]">
-            <p className="text-xl md:text-2xl text-gray-300 italic mb-8 leading-relaxed">
-              "{testimonials[currentTestimonial].text}"
-            </p>
-            <p className="text-yellow-500 font-semibold">
-              - {testimonials[currentTestimonial].author}
-            </p>
-          </div>
-
-          <div className="flex justify-center space-x-4 mt-12">
-            <Button
-              onClick={prevTestimonial}
-              variant="outline"
-              className="border-yellow-500 text-yellow-500 hover:bg-yellow-500 hover:text-black"
-            >
-              Previous
-            </Button>
-            <Button
-              onClick={nextTestimonial}
-              className="bg-yellow-500 hover:bg-yellow-600 text-black"
-            >
-              Next
-            </Button>
-          </div>
-        </div>
+        {/* Removed the custom "Review Us on Google" button */}
       </div>
     </section>
   );
 };
-
 export default Testimonials;
