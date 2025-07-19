@@ -1,3 +1,5 @@
+// src/components/Contact.jsx
+
 import React, { useState, Suspense, lazy } from 'react';
 import { Button } from '@/components/ui/button';
 import { useToast } from '@/components/ui/use-toast';
@@ -39,7 +41,10 @@ const Contact = () => {
       );
   };
 
-  const directionsUrl = `https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent("Salford M50 2GR, United Kingdom")}`;
+  // Corrected directionsUrl (example for Manchester, UK)
+  // You should replace 'Salford M50 2GR, United Kingdom' with your exact address for accuracy
+  const directionsUrl = `https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent(company.address || "Salford M50 2GR, United Kingdom")}`;
+
 
   return (
     <section id="contact" className="py-20 bg-black">
@@ -69,7 +74,8 @@ const Contact = () => {
         </div>
 
         <div className="grid lg:grid-cols-2 gap-12">
-          <div>
+          {/* Add the ID here for the form section */}
+          <div id="contact-form-section"> {/* <--- THIS IS THE NEW ID */}
             <h3 className="text-2xl font-bold text-yellow-500 mb-6">GET IN TOUCH</h3>
             <p className="text-gray-400 mb-8">
               Please fill out the form below to send us an email and we will get back to you as soon as possible.

@@ -11,11 +11,13 @@ import Features from '@/components/sections/Features';
 import About from '@/components/sections/About';
 import Services from '@/components/sections/Services';
 import Gallery from '@/components/sections/Gallery';
+import Instagram from '@/components/sections/Instagram';
 import Reviews from '@/components/sections/Reviews';
 import Team from '@/components/sections/Team';
 import Contact from '@/components/sections/Contact';
 import Suppliers from '@/components/sections/Suppliers';
 import GalleryModal from '@/components/ui/GalleryModal';
+import FixedBookingButton from '@/components/sections/FixedBookingButton';
 import { galleryItems, galleryItemsByCategory } from '@/data/content';
 
 const SectionWrapper = ({ children, className }) => (
@@ -95,13 +97,14 @@ function App() {
               onCategoryChange={handleCategoryChange}
             />
           </SectionWrapper>
+          <SectionWrapper><Instagram /></SectionWrapper>
           <SectionWrapper><Reviews /></SectionWrapper>
           <SectionWrapper><Team /></SectionWrapper>
           <SectionWrapper><Contact /></SectionWrapper>
         </main>
 
         <Footer />
-
+        <FixedBookingButton />
         <AnimatePresence>
           {selectedImageIndex !== null && (
             <GalleryModal

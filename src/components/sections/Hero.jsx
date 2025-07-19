@@ -36,7 +36,7 @@ const Hero = ({ scrollToSection }) => {
           <Button 
             size="lg"
             className="bg-yellow-500 text-black font-bold text-lg px-8 py-6 rounded-md hover:bg-yellow-400 transition-transform hover:scale-105"
-            onClick={() => scrollToSection('contact')}
+            onClick={() => scrollToSection('contact-form-section')}
           >
             GET A FREE QUOTE
           </Button>
