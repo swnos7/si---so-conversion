@@ -7,7 +7,7 @@ import { galleryCategories, galleryItemsByCategory, galleryItems } from '@/data/
 
 const Gallery = ({ onImageClick, onCategoryChange }) => {
   const scrollContainerRef = useRef(null);
-  const [activeCategory, setActiveCategory] = useState('all');
+  const [activeCategory, setActiveCategory] = useState('bespoke-projects'); // Default category
 
   const scroll = (direction) => {
     if (scrollContainerRef.current) {
