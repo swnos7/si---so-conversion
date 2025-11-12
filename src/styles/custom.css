@@ -434,3 +434,11 @@ textarea:focus {
     transform: translate(-50%, -50%) translate(20%, 34%);
   }
 }
+
+.perspective-distant {
+  perspective: 1200px;
+}
+
+.transform-3d {
+  transform-style: preserve-3d;
+}

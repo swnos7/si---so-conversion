@@ -28,7 +28,7 @@ const Reviews = () => {
         
         {/* Elfsight Google Reviews Widget container */}
         {/* The script loaded by useEffect will find this div and inject the widget here */}
-        <div class="elfsight-app-69511ec5-53eb-4e41-ae19-62dae8b6972e"></div>
+        <div className="elfsight-app-69511ec5-53eb-4e41-ae19-62dae8b6972e"></div>
 
         {/* Removed the custom "Review Us on Google" button */}
       </div>

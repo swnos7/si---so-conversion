@@ -146,7 +146,7 @@ const Suppliers = () => {
 
         <div className="relative w-full overflow-hidden whitespace-nowrap py-4">
           {/* Enhanced Gradient Fades */}
-          <style jsx>{`
+          <style>{`
             .fade-left {
               position: absolute;
               top: 0;

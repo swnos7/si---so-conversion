@@ -16,7 +16,7 @@ const GalleryModal = ({ galleryItems, currentIndex, onClose, onNext, onPrev }) =
     return () => window.removeEventListener('keydown', handleKeyDown);
   }, [onNext, onPrev, onClose]);
 
-  if (currentIndex === null) {
+  if (currentIndex === null || !galleryItems?.length || !galleryItems[currentIndex]) {
     return null;
   }
 

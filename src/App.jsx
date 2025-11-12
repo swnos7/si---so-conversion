@@ -1,5 +1,5 @@
 
-import React, { useState } from 'react';
+import React from 'react';
 import { Helmet } from 'react-helmet';
 import { motion, AnimatePresence } from 'framer-motion';
 
@@ -16,8 +16,9 @@ import Reviews from '@/components/sections/Reviews';
 import Team from '@/components/sections/Team';
 import Contact from '@/components/sections/Contact';
 import Suppliers from '@/components/sections/Suppliers';
-import GalleryModal from '@/components/ui/GalleryModal';
 import FixedBookingButton from '@/components/sections/FixedBookingButton';
+import DotScreenShader from '@/components/ui/dot-shader-background';
+import GalleryModal from '@/components/ui/GalleryModal';
 import { galleryItems, galleryItemsByCategory } from '@/data/content';
 
 const SectionWrapper = ({ children, className }) => (
@@ -33,9 +34,9 @@ const SectionWrapper = ({ children, className }) => (
 );
 
 function App() {
-  const [selectedImageIndex, setSelectedImageIndex] = useState(null);
-  const [currentGalleryItems, setCurrentGalleryItems] = useState(galleryItems);
-  const [activeCategory, setActiveCategory] = useState('all');
+  const [selectedImageIndex, setSelectedImageIndex] = React.useState(null);
+  const [currentGalleryItems, setCurrentGalleryItems] = React.useState(galleryItems);
+  const [activeCategory, setActiveCategory] = React.useState('all');
 
   const scrollToSection = (sectionId) => {
     const element = document.getElementById(sectionId);
@@ -50,19 +51,16 @@ function App() {
 
   const handleCategoryChange = (categoryId) => {
     setActiveCategory(categoryId);
-    
-    // Update current gallery items based on category
     let newItems;
     if (categoryId === 'all') {
       const allItems = [];
-      Object.values(galleryItemsByCategory).forEach(categoryItems => {
+      Object.values(galleryItemsByCategory).forEach((categoryItems) => {
         allItems.push(...categoryItems);
       });
       newItems = allItems.length > 0 ? allItems : galleryItems;
     } else {
       newItems = galleryItemsByCategory[categoryId] || [];
     }
-    
     setCurrentGalleryItems(newItems);
   };
 
@@ -82,7 +80,10 @@ function App() {
         <link rel="icon" type="image/x-icon" href="/favicon.ico" />
       </Helmet>
 
-      <div className="min-h-screen bg-black text-white overflow-x-hidden">
+      <div className="relative min-h-screen overflow-x-hidden bg-black text-white">
+        <div className="pointer-events-none fixed inset-0 -z-10 opacity-55">
+          <DotScreenShader />
+        </div>
         <Header scrollToSection={scrollToSection} />
         
         <main>
@@ -92,10 +93,7 @@ function App() {
           <SectionWrapper><Suppliers /></SectionWrapper>
           <SectionWrapper><Services /></SectionWrapper>
           <SectionWrapper>
-            <Gallery 
-              onImageClick={handleImageClick} 
-              onCategoryChange={handleCategoryChange}
-            />
+            <Gallery onImageClick={handleImageClick} onCategoryChange={handleCategoryChange} />
           </SectionWrapper>
           <SectionWrapper><Instagram /></SectionWrapper>
           <SectionWrapper><Reviews /></SectionWrapper>
@@ -116,7 +114,6 @@ function App() {
             />
           )}
         </AnimatePresence>
-
         <Toaster />
       </div>
     </>

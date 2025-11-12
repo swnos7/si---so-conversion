@@ -64,7 +64,7 @@ const Hero = ({ scrollToSection }) => {
       id="hero"
       className="relative overflow-hidden min-h-screen flex items-center justify-center text-center bg-cover bg-center bg-no-repeat bg-fixed"
       style={{
-        backgroundImage: `url('/images/bg image/bac.png')`,
+        backgroundImage: `url('/images/bg image/background.png')`,
         backgroundSize: 'cover',
         backgroundRepeat: 'no-repeat',
         backgroundPosition: 'center',
