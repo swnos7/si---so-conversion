@@ -115,7 +115,7 @@ const ThumbnailStrip: React.FC<ThumbnailStripProps> = ({ items, index, onSelect 
   return (
     <div
       ref={thumbnailsRef}
-      className="mx-auto w-full max-w-4xl overflow-x-auto"
+      className="mx-auto w-full max-w-4xl overflow-x-auto px-2"
       style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
     >
       <style>{`
@@ -123,7 +123,7 @@ const ThumbnailStrip: React.FC<ThumbnailStripProps> = ({ items, index, onSelect 
           display: none;
         }
       `}</style>
-      <div className="flex h-20 gap-0.5 pb-2 px-6" style={{ width: 'fit-content' }}>
+      <div className="flex h-20 gap-0.5 pb-2" style={{ width: 'fit-content' }}>
         {items.map((item, i) => (
           <motion.button
             type="button"
