@@ -1,7 +1,6 @@
 import React, { useMemo, useEffect } from 'react';
 import { Canvas, useFrame, useThree } from '@react-three/fiber';
 import { shaderMaterial, useTrailTexture } from '@react-three/drei';
-import { useTheme } from 'next-themes';
 import * as THREE from 'three';
 import { cn } from '@/lib/utils';
 
@@ -94,24 +93,17 @@ interface DotShaderProps {
 const Scene: React.FC = () => {
   const size = useThree((s) => s.size);
   const viewport = useThree((s) => s.viewport);
-  const { theme } = useTheme();
   const rotation = 0.1;
   const gridSize = 120;
 
-  const themeColors = React.useMemo(() => {
-    if (theme === 'light') {
-      return {
-        dotColor: '#fef3c7',
-        bgColor: '#f5f3ff',
-        dotOpacity: 0.12,
-      };
-    }
-    return {
+  const themeColors = React.useMemo(
+    () => ({
       dotColor: '#fde68a',
       bgColor: '#050505',
       dotOpacity: 0.05,
-    };
-  }, [theme]);
+    }),
+    [],
+  );
 
   const [trail, onMove] = useTrailTexture({
     size: 512,

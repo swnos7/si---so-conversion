@@ -1,5 +1,0 @@
-[[redirects]]
-  from = "/*"
-  to = "https://techniqueartconstruction.site"
-  status = 301
-  force = true
