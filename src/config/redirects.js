@@ -1,8 +1,8 @@
 export const COMPANY_DESTINATIONS = {
   construction: {
     key: 'construction',
-    label: 'Technique Art Construction',
-    url: 'https://techniqueartconstruction.site',
+    label: 'Technique Construction',
+    url: 'https://techniqueconstruction.site',
   },
 };
 

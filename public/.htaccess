@@ -3,7 +3,7 @@
   RewriteBase /
 
   # Route all legacy traffic to the construction company website.
-  RewriteRule ^ https://techniqueartconstruction.site/ [R=301,L]
+  RewriteRule ^ https://techniqueconstruction.site/ [R=301,L]
 </IfModule>
 
 <IfModule mod_headers.c>
